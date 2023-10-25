@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Advanced Calculator</h1>
+    <input type="text" id="result" readonly>
+    <div class="calculator">
+        <div class="row">
+            <button class="operator" onclick="appendToResult('(')">(</button>
+            <button class="operator" onclick="appendToResult(')')">)</button>
+            <button class="operator" onclick="performOperation('/')">/</button>
+            <button class="operator" onclick="clearResult()">C</button>
+        </div>
+        <div class="row">
+            <button class="number" onclick="appendToResult('7')">7</button>
+            <button class="number" onclick="appendToResult('8')">8</button>
+            <button class="number" onclick="appendToResult('9')">9</button>
+            <button class="operator" onclick="performOperation('*')">*</button>
+        </div>
+        <div class="row">
+            <button class="number" onclick="appendToResult('4')">4</button>
+            <button class="number" onclick="appendToResult('5')">5</button>
+            <button class="number" onclick="appendToResult('6')">6</button>
+            <button class="operator" onclick="performOperation('-')">-</button>
+        </div>
+        <div class="row">
+            <button class="number" onclick="appendToResult('1')">1</button>
+            <button class="number" onclick="appendToResult('2')">2</button>
+            <button class="number" onclick="appendToResult('3')">3</button>
+            <button class="operator" onclick="performOperation('+')">+</button>
+        </div>
+        <div class="row">
+            <!-- Removed the "0" button from here -->
+            <button class="operator" onclick="appendToResult('.')">.</button>
+            <button class="calculate" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

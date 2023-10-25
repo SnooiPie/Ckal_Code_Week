@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kareler</title>
+    <style>
+        /* Kareler için stil tanımlamaları */
+        .kare {
+            width: 60px; /* Karelerin genişliği */
+            height: 60px; /* Karelerin yüksekliği */
+            background-color: rgb(98, 101, 102);
+            border: 2px solid #787878; /* Kalın bir kenarlık ekledik */
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px; /* Yazı boyutunu büyüttük */
+            font-weight: bold; /* Yazıyı kalın yaptık */
+            color: #eddddd; /* Yazı rengini beyaz yaptık */
+        }
+        /* Tabloyu ortalamak için stil ekledik */
+        table {
+            margin: 0 auto;
+        }
+
+        body{
+            background-color: #333;
+        }
+
+        button{
+            background-color: #787878;
+            width: 100px;
+            height: 40px;
+            text-shadow: #333;
+            margin-left: 100px;
+            margin-bottom: 100px;
+            color:#eddddd;
+            touch-action: cross-slide-x;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- 5 sütun ve 6 satır -->
+        <tr>
+            <td class="kare">1</td>
+            <td class="kare">2</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="kare">3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">4</td>
+            <td class="kare">5</td>
+        </tr>
+        <tr>
+            <td class="kare">6</td>
+            <td class="kare">7</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td class="kare">8</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">9</td>
+            <td class="kare">10</td>
+        </tr>
+        <tr>
+            <td class="kare">11</td>
+            <td class="kare">12</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">13</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">14</td>
+            <td class="kare">15</td>
+        </tr>
+        <tr>
+            <td class="kare">16</td>
+            <td class="kare">17</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">18</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">19</td>
+            <td class="kare">20</td>
+        </tr>
+        <tr>
+            <td class="kare">21</td>
+            <td class="kare">22</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">23</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">24</td>
+            <td class="kare">25</td>
+        </tr>
+        <tr>
+            <td class="kare">26</td>
+            <td class="kare">27</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">28</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="kare">29</td>
+            <td class="kare">30</td>
+    </table>
+
+    <button id="karistirBtn">Karıştır</button>
+
+    <script>
+        // Karıştır butonuna tıklanıldığında kareleri karıştır
+        document
+          .getElementById("karistirBtn")
+          .addEventListener("click", function () {
+            const kareler = document.querySelectorAll(".kare");
+            const karelerDizi = Array.from(kareler);
+  
+            // Kareleri karıştır
+            karelerDizi.sort(function () {
+              return 0.5 - Math.random();
+            });
+  
+            karelerDizi.forEach(function (kare, index) {
+              kare.textContent = index + 1;
+  
+              if (kare.textContent === "30") {
+                kare.textContent = "bos";
+              }
+            });
+          });
+      </script>
+    
+</body>
+</html>
